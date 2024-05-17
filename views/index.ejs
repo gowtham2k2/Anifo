@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anifo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Hello there</h1>
+    <form action="/search" method="post">
+        <input type="text" name="animeName" id="animeName" placeholder="eg: naruto">
+        <input type="submit" value="Go">
+    </form>
+    <%if(locals.response){%>
+        <p>
+            <%= response %>
+        </p>
+        <%}else if(locals.alert){%>
+            <h1>
+                <%= alert %>
+            </h1>
+            <% } %>
+                <% if(locals.result){ %>
+                    <div class="posters">
+                        <img src=<%=result.data[0].images.jpg.image_url %> alt=<%= result.data[0].title %>>
+                            <ul>
+                                <li>Title: <%= result.data[0].title %>
+                                <li>English Title: <%= result.data[0].title_english %>
+                                <li>japenese Title: <%= result.data[0].title_japanese %>
+                                </li>
+                            </ul>
+                    </div>
+                    <% } %>
+</body>
+
+</html>
