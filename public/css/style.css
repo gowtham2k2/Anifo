@@ -1,12 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
+:root {
+    --bgcolor: #26355D;
+    --compColor: #FFE196;
+}
+
 body {
-    background-color: #881d56;
+    background-color: var(--bgcolor);
+    color: white;
 }
 
 h1 {
     text-align: center;
-    font-size: 25px;
+    font-size: 5rem;
+    font-family: 'sigmar one';
+    color: var(--compColor);
 }
 
-p {
-    text-align: center;
+.searchAnime {
+    margin: 4rem auto 4rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.searchAnime>input[name="animeName"] {
+    flex: 0 1 20rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    color: #646464;
+    padding: .8rem 1rem;
+    font-size: 1.2rem;
+    width: 25rem;
+
+}
+
+.searchAnime>input[name="animeName"]:focus {
+    transition: 500ms;
+    color: #fff;
+    background-color: #587ee8;
+}
+
+.searchAnime>input[type="submit"] {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--bgcolor);
+    flex: 0 1 7rem;
+    align-self: stretch;
+    background-color: var(--compColor);
+    border: none;
+    border-radius: 2rem;
+}
+
+.anifo>ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.info {
+    color: var(--compColor);
+}
+
+.trailer>.trailer-grid {
+    display: grid;
+    grid-template: repeat(2, 200px)/ repeat(3, 400px);
+    gap: 1rem;
+    grid-auto-rows: 200px;
+    grid-auto-columns: 400px;
+    place-items: stretch;
 }
