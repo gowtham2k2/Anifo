@@ -6,10 +6,10 @@ Anifo is a platform where you can gather your favourite Anime Inforamtion and De
 
 ## Installation
 
-<ol>
-<li>Download and Unzip the file.</li>
-<li>Use the package manager [npm](https://docs.npmjs.com/) to install Anifo.</li>
-</ol>
+
+1. Download and Unzip the file.
+2. Use the package manager [npm](https://docs.npmjs.com/) to install Anifo.
+
 
 ```bash
 npm update
