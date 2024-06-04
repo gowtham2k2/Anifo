@@ -1,87 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anifo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <h1 class="container-fluid">Welcome 2 Anifo</h1>
-    <form class="searchAnime container" action="/search" method="post">
-        <input type="text" name="animeName" id="animeName" placeholder="eg: solo leveling">
-        <input type="submit" value="Go">
-    </form>
+<%- include("header.ejs") %>
     <%if(locals.response){%>
-        <p class="text-center">
-            <%= response %>
-        </p>
+        <div class="anime-collection container text-center">
+            <video class="img-fluid" src=<%=response %> type="video/mp4" autoplay="autoplay" loop="true" playsinline
+                muted
+                ></video>
+        </div>
+
         <%}else if(locals.alert){%>
-            <h1>
+            <p>
                 <%= alert %>
-            </h1>
+            </p>
             <% } %>
                 <% if(locals.result){ %>
-                    <div class="anifo container">
-                        <img class="rounded d-block" src=<%=result.data[0].images.jpg.image_url %> alt=<%=
-                            result.data[0].title %>>
-                            <ul>
-                                <li><strong class="info">Title:</strong>
-                                    <%= result.data[0].title %>
-                                </li>
-                                <li><strong class="info">English Title:</strong>
-                                    <%= result.data[0].title_english %>
-                                </li>
-                                <li><strong class="info">japenese Title:</strong>
-                                    <%= result.data[0].title_japanese %>
-                                </li>
-                                <li><strong class="info">Type:</strong>
-                                    <%= result.data[0].type %>
-                                </li>
-                                <li><strong class="info"> Source:</strong>
-                                    <%= result.data[0].source %>
-                                </li>
-                                <li><strong class="info">Episodes:</strong>
-                                    <%= result.data[0].episodes %>
-                                </li>
-                                <li><strong class="info">Status:</strong>
-                                    <%= result.data[0].status %>
-                                </li>
-                                <li><strong class="info">Duration:</strong>
-                                    <%= result.data[0].duration %>
-                                </li>
-                                <li><strong class="info">Rating:</strong>
-                                    <%= result.data[0].rating %>
-                                </li>
-                                <li><strong class="info">Overall Score:</strong>
-                                    <%= result.data[0].score %>
-                                </li>
-                                <li><strong class="info">Synopsis:</strong>
-                                    <p class="text-start">
-                                        <%= result.data[0].synopsis %>
-                                    </p>
-                                </li>
-                            </ul>
-                            <div class="trailer" id="trailer">
-                                <h2>Trailers</h2>
-                                <div class="trailer-grid">
-                                    <% if(result.data[0].trailer.embed_url !==null){ %>
-                                        <iframe class="rounded" src="<%= result.data[0].trailer.embed_url %>"
-                                            allowfullscreen></iframe>
-                                        <% }else{ %>
-                                            <p class="text-start">Trailer Not Available :( </p>
-                                            <% } %>
-                                </div>
-                            </div>
-                    </div>
-                    <% } %>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                            crossorigin="anonymous"></script>
-</body>
-
-</html>
+                    <%- include("searchResult.ejs") %>
+                        <% }else if(locals.content){ %>
+                            <%- include("anime.ejs") %>
+                                <% } %>
+                                    <%- include("footer.ejs") %>
