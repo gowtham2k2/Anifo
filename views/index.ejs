@@ -1,7 +1,8 @@
 <%- include("header.ejs") %>
     <%if(locals.response){%>
         <div class="anime-collection container text-center">
-            <video class="img-fluid" src=<%=response %> type="video/mp4" autoplay="autoplay" loop="true" playsinline
+            <video class="img-fluid" poster="<%= response %>" src=<%=response %> type="video/mp4" autoplay="autoplay"
+                loop="true" playsinline
                 muted
                 ></video>
         </div>

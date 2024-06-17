@@ -43,27 +43,34 @@ h1>a:hover {
 
 .searchAnime>input[name="animeSearch"] {
     flex: 0 1 20rem;
-    background-color: #fff;
+    background-color: var(--subBgColor);
     border: none;
     border-radius: 2rem;
     outline: none;
-    color: #646464;
+    color: var(--bgcolor);
     padding: .8rem 1rem;
     font-size: 1.2rem;
     font-weight: 700;
     width: 25rem;
+    transition: transform 500ms;
 
+}
+
+.searchAnime>input[name="animeSearch"]::placeholder {
+    color: var(--bgcolor);
 }
 
 .searchAnime>input[name="animeSearch"]:focus {
     transition: 500ms;
-    color: #fff;
-    background-color: var(--subBgColor);
+    color: var(--bgcolor);
+    background-color: #fff;
 }
 
 .searchAnime>input[name="animeSearch"]:focus::placeholder {
-    color: var(--bgcolor);
+    color: #9e9e9e;
 }
+
+
 
 .searchAnime>input[type="submit"] {
     font-size: 1.2rem;
@@ -76,49 +83,85 @@ h1>a:hover {
     border-radius: 2rem;
 }
 
+.searchAnime>input[type="submit"]:hover {
+    background-color: var(--hovercolr);
+    color: var(--subBgColor);
+}
+
 /* anime content section*/
+
+.anifo .info {
+    color: var(--compColor);
+}
+
+.anifo img {
+    float: left;
+    margin-right: 10px;
+}
+
 .anifo>ul {
+    display: inline;
     list-style: none;
     padding: 0;
     margin-bottom: 2rem;
 }
 
-.info {
-    color: var(--compColor);
+.anifo .synopsis {
+    clear: left;
 }
 
-.trailer>.trailer-grid {
-    display: grid;
-    grid-template: repeat(1, 400px)/ repeat(1, 700px);
-    gap: 1rem;
-    grid-auto-rows: 400px;
-    grid-auto-columns: 700px;
-    place-items: stretch;
-    justify-content: center;
+.trailer>.trailer-list {}
+
+.trailer>.trailer-list>* {
+    max-height: 500px;
+    max-width: 600px;
 }
 
 /* search result section */
 .search-result {
-    display: grid;
-    grid-template: repeat(4, max-content)/repeat(4, min-content);
-    place-items: stretch;
-    place-content: center;
-    gap: 2rem;
-}
-.search-result form{
     display: flex;
-    justify-content: stretch;
-    align-items: stretch;
-}
-.search-result button{
-    display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
-    background: transparent;
+}
+
+.search-result form {
+    margin: .7rem .5rem;
+}
+
+.search-result button {
+    background-color: var(--compColor);
+    width: 15rem;
+    height: 24rem;
     border: none;
-    color: #fff;
+    padding: 0;
+    transition: transform 200ms;
 }
-.search-result button>p:hover{
-color: var(--compColor);
+
+.search-result button:hover {
+    box-shadow: 1px 1px 8px 4px var(--compColor);
+    transform: scale(1.2);
 }
+
+.search-result button img {
+    width: 100%;
+    height: 90%;
+    padding: 0;
+}
+
+.search-result button p {
+    width: 100%;
+    padding: 2px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--bgcolor);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.search-result button>p:hover {
+    color: var(--subBgColor);
+}
+
+/* main anime content */

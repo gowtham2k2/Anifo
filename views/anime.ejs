@@ -1,50 +1,51 @@
 <div class="anifo container">
-    <img class="rounded d-block mb-2" src="<%=content.data.images.jpg.large_image_url %>" alt="<%= content.data.title %>">
-        <ul>
-            <li><strong class="info">Title:</strong>
-                <%= content.data.title %>
-            </li>
-            <li><strong class="info">English Title:</strong>
-                <%= content.data.title_english %>
-            </li>
-            <li><strong class="info">japenese Title:</strong>
-                <%= content.data.title_japanese %>
-            </li>
-            <li><strong class="info">Type:</strong>
-                <%= content.data.type %>
-            </li>
-            <li><strong class="info"> Source:</strong>
-                <%= content.data.source %>
-            </li>
-            <li><strong class="info">Episodes:</strong>
-                <%= content.data.episodes %>
-            </li>
-            <li><strong class="info">Status:</strong>
-                <%= content.data.status %>
-            </li>
-            <li><strong class="info">Duration:</strong>
-                <%= content.data.duration %>
-            </li>
-            <li><strong class="info">Rating:</strong>
-                <%= content.data.rating %>
-            </li>
-            <li><strong class="info">Overall Score:</strong>
-                <%= content.data.score %>
-            </li>
-            <li><strong class="info">Synopsis:</strong>
-                <p class="text-start">
-                    <%= content.data.synopsis %>
-                </p>
-            </li>
-        </ul>
-        <div class="trailer mb-4" id="trailer">
-            <h2>Trailers</h2>
-            <div class="trailer-grid">
-                <% if(content.data.trailer.embed_url !==null){ %>
-                    <iframe class="rounded" src="<%= content.data.trailer.embed_url %>" allowfullscreen></iframe>
-                    <% }else{ %>
-                        <p class="text-start">Trailer Not Available :( </p>
-                        <% } %>
-            </div>
+    <img class="rounded d-block mb-2" src="<%=content.data.images.jpg.large_image_url %>"
+        alt="<%= content.data.title %>">
+    <ul>
+        <li><strong class="info">Title:</strong>
+            <%= content.data.title %>
+        </li>
+        <li><strong class="info">English Title:</strong>
+            <%= content.data.title_english %>
+        </li>
+        <li><strong class="info">japenese Title:</strong>
+            <%= content.data.title_japanese %>
+        </li>
+        <li><strong class="info">Type:</strong>
+            <%= content.data.type %>
+        </li>
+        <li><strong class="info"> Source:</strong>
+            <%= content.data.source %>
+        </li>
+        <li><strong class="info">Episodes:</strong>
+            <%= content.data.episodes %>
+        </li>
+        <li><strong class="info">Status:</strong>
+            <%= content.data.status %>
+        </li>
+        <li><strong class="info">Duration:</strong>
+            <%= content.data.duration %>
+        </li>
+        <li><strong class="info">Rating:</strong>
+            <%= content.data.rating %>
+        </li>
+        <li><strong class="info">Overall Score:</strong>
+            <%= content.data.score %>
+        </li>
+    </ul>
+    <div class="synopsis"><strong class="info">Synopsis:</strong>
+        <p class="text-start">
+            <%= content.data.synopsis %>
+        </p>
+    </div>
+    <div class="trailer mb-4" id="trailer">
+        <h2>Trailers</h2>
+        <div class="trailer-list">
+            <% if(content.data.trailer.embed_url !==null){ %>
+                <iframe class="rounded" src="<%= content.data.trailer.embed_url %>" allowfullscreen></iframe>
+                <% }else{ %>
+                    <p class="text-start">Trailer Not Available :( </p>
+                    <% } %>
         </div>
+    </div>
 </div>

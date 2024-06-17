@@ -2,7 +2,7 @@
     <% result.data.forEach((element)=> { %>
         <form action="/anime" method="post">
             <input type="hidden" name="animeId" value=<%=element.mal_id %>>
-            <button type="submit">
+            <button class="rounded" type="submit">
                 <img class="rounded" src="<%=element.images.jpg.image_url %>" alt="<%= element.title %>">
                 <p>
                     <%= element.title %>
